@@ -1,0 +1,28 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BlueHC/TTHack-2018--Waschorder-Container-Waschanlage-1.git"
+  },
+  "keywords": [
+    "wash",
+    "hamburg",
+    "hamburg",
+    "port",
+    "blue",
+    "hackers",
+    "club"
+  ],
+  "author": "Samuel + MCI",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BlueHC/TTHack-2018--Waschorder-Container-Waschanlage-1/issues"
+  },
+  "homepage": "https://github.com/BlueHC/TTHack-2018--Waschorder-Container-Waschanlage-1#readme"
+}
