@@ -5,7 +5,7 @@
   "main": "dist/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "tsc && nodemon dist/server.js"
+    "start": "tsc && nodemon -e ts dist/server.js"
   },
   "repository": {
     "type": "git",
@@ -27,8 +27,8 @@
   },
   "homepage": "https://github.com/BlueHC/TTHack-2018--Waschorder-Container-Waschanlage-1#readme",
   "dependencies": {
-    "@types/nodemailer": "^4.6.0",
     "axios": "^0.18.0",
+    "bcrypt": "^2.0.1",
     "bluebird": "^3.5.1",
     "body-parser": "^1.18.2",
     "cors": "^2.8.4",
@@ -40,6 +40,7 @@
     "winston": "^2.4.2"
   },
   "devDependencies": {
+    "@types/bcrypt": "^1.0.0",
     "@types/bluebird": "^3.5.20",
     "@types/body-parser": "^1.16.8",
     "@types/cors": "^2.8.3",

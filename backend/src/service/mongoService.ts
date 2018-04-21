@@ -31,9 +31,19 @@ export const MongoService = (() => {
         return UserModel.findOne({email: email}).exec();
     };
 
+    const registerUser = (surname: string, name: string, email: string, password: string): any => {
+        return new UserModel({
+            surname,
+            name,
+            email,
+            password
+        }).save();
+    };
+
     const mongoService: mongoService = {
         saveWashOrder,
         getUser,
+        registerUser,
     };
 
     const init = () => {
