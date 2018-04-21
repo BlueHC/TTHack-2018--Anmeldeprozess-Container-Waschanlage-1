@@ -1,64 +1,71 @@
 {% extends "baseHTML.twig" %}
 
 {% block body %}
-    <div>
-        <form action="generateCleaningForm.php?create" method="post" id="selectTrailertype" name="selectTrailertype" class="form-control mt-3">
+<div class="text-center">
+ <form action="generateCleaningForm.php?create" method="post" id="selectTrailertype" name="selectTrailertype" class="form-control mt-3">
+     <div id="section1">
             Trailertype
-            <div class="form-group">
+            <div>
+            <div class="form-group mt-5">
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="Ttype" value="20" id="Ttype20">
-                    <label class="form-check-lable" for="Ttype20"><img src="lib/img/truck_20.svg"><em>20</em></label>
+                    <label class="form-check-lable" for="Ttype20"><img src="lib/img/truck_20.svg" width="175px"></label>
                 </div>
             </div>
-            <div class="form-group">
+            <div class="form-group mt-5">
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="Ttype" value="20+20" id="Ttype20+20">
-                    <label class="form-check-lable" for="Ttype20+20"><img src="lib/img/truck_20_20.svg"><em>20 + 20</em></label>
+                    <label class="form-check-lable" for="Ttype20+20"><img src="lib/img/truck_20_20.svg" width="175px"></label>
                 </div>
             </div>
-            <div class="form-group">
+            <div class="form-group mt-5 mb-5">
                 <div class="form-check">
+                    <label class="form-check-lable" for="Ttype40">
                     <input class="form-check-input" type="radio" name="Ttype" value="40" id="Ttype40">
-                    <label class="form-check-lable" for="Ttype40"><img src="lib/img/truck_40.svg"><em>40</em></label>
+                    <img src="lib/img/truck_40.svg" width="175px"></label>
                 </div>
             </div>
-
-            Chambers
-            <div class="form-group">
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="amountChamber" id="Chamber1" value="1">
-                <label class="form-check-label" for="Chamber1">1</label>
             </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="amountChamber" id="Chamber2" value="2">
-                <label class="form-check-label" for="Chamber2">2</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="amountChamber" id="Chamber3" value="3">
-                <label class="form-check-label" for="Chamber3">3</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="amountChamber" id="Chamber4" value="4">
-                <label class="form-check-label" id="LabelChamber4" for="Chamber4">4</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="amountChamber" id="Chamber5" value="5">
-                <label class="form-check-label" id="LabelChamber5" for="Chamber5">5</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="amountChamber" id="Chamber6" value="6">
-                <label class="form-check-label" id="LabelChamber6" for="Chamber6">6</label>
-            </div>
-            </div>
-            <div class="form-group">
-                <label class="form-check-label" id="LabelNumberPlate" for="NumberPlate">Numberplate</label>
-                <input class="form-control" type="text" name="NumberPlate" id="NumberPlate" placeholder="Numberplate">
-            </div>
-            <div class="form-group">
-                <label class="form-check-label" id="LabelTanknumber" for="Tanknumber">Tanknumber</label>
-                <input class="form-control" type="text" name="Tanknumber" id="Tanknumber" placeholder="XXXU1234567">
-            </div>
-            {% endblock %}
+        </div>
+     <div id="section2" style="display: none">
+     <div class="form-group">
+         Chambers
+         <div class="form-group">
+             <div class="form-check form-check-inline">
+                 <input class="form-check-input" type="radio" name="amountChamber" id="Chamber1" value="1">
+                 <label class="form-check-label" for="Chamber1">1</label>
+             </div>
+             <div class="form-check form-check-inline">
+                 <input class="form-check-input" type="radio" name="amountChamber" id="Chamber2" value="2">
+                 <label class="form-check-label" for="Chamber2">2</label>
+             </div>
+             <div class="form-check form-check-inline">
+                 <input class="form-check-input" type="radio" name="amountChamber" id="Chamber3" value="3">
+                 <label class="form-check-label" for="Chamber3">3</label>
+             </div>
+             <div class="form-check form-check-inline">
+                 <input class="form-check-input" type="radio" name="amountChamber" id="Chamber4" value="4">
+                 <label class="form-check-label" id="LabelChamber4" for="Chamber4">4</label>
+             </div>
+             <div class="form-check form-check-inline">
+                 <input class="form-check-input" type="radio" name="amountChamber" id="Chamber5" value="5">
+                 <label class="form-check-label" id="LabelChamber5" for="Chamber5">5</label>
+             </div>
+             <div class="form-check form-check-inline">
+                 <input class="form-check-input" type="radio" name="amountChamber" id="Chamber6" value="6">
+                 <label class="form-check-label" id="LabelChamber6" for="Chamber6">6</label>
+             </div>
+         </div>
+         <div class="form-group">
+             <label class="form-check-label" id="LabelNumberPlate" for="NumberPlate">Numberplate</label>
+             <input class="form-control" type="text" name="NumberPlate" id="NumberPlate" placeholder="Numberplate">
+         </div>
+         <div class="form-group">
+             <label class="form-check-label" id="LabelTanknumber" for="Tanknumber">Tanknumber</label>
+             <input class="form-control" type="text" name="Tanknumber" id="Tanknumber" placeholder="XXXU1234567">
+         </div>
+     </div>
+     {% endblock %}
 
 
 {% block footer %}
@@ -70,12 +77,19 @@
                 <input  type="submit" class="btn btn-success btn-lg btn-block" value="next">
             </div>
         </div>
-        </form>
-    </div>
+     </div>
+ </form>
+ </div>
+
 {% endblock %}
 
 {% block script %}
     <script>
+        $('#Ttype20').click(function(){
+            $("#section1").hide();
+            $("#section2").show();
+        });
+
         $('#selectTrailertype input').on('change', function() {
             console.log(this.value);
             switch(this.value){
