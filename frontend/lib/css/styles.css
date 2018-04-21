@@ -1,12 +1,12 @@
 .btn-success{
     background-color: #002369 !important;
-    border-color: #be0038 !important;
+    border-color: #002369 !important;
     color: #ffffff !important;
 }
 
 .btn-success:hover{
     background-color: #002369 !important;
-    border-color: #be0038 !important;
+    border-color: #002369 !important;
     box-shadow: none;
 }
 
@@ -27,4 +27,17 @@
     background-color: red;
     opacity: 0.9;
     color: white;
+}
+
+.form-check-input{
+    visibility: hidden;
+
+}
+
+img:hover{
+    filter: invert(20%);
+}
+
+label:active{
+    filter: drop-shadow(2px);
 }
