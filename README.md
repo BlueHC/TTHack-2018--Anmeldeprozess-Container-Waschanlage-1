@@ -1,5 +1,5 @@
 # To get the backend up and running
-* Start a mongoDB instance on Port 27017 (for example via Docker)
+* Start a mongoDB instance on Port 27017 (for example via Docker) or simply use docker-compose up in the root of the project
 * `cd backend`
 * `npm install` (only first start)
 * `npm start`
