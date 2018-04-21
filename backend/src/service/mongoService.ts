@@ -4,13 +4,12 @@ import {logger} from "../utils/logger";
 import {mongoService} from "../types/services/mongoService";
 import {WashOderModel} from "../models/WashOrderModel";
 import {washOrder} from "../types/models/WashOrder";
-import * as Bluebird from "bluebird";
 
 export const MongoService = (() => {
 
     (<any>mongoose).Promise = require("bluebird");
 
-    const saveWashOrder = (washOrder: washOrder): Bluebird<any> => {
+    const saveWashOrder = (washOrder: washOrder): any => {
         return new WashOderModel(washOrder).save();
     };
 

@@ -5,8 +5,11 @@ import * as http from "http";
 import {PORT} from "./config/config";
 import * as Bluebird from "bluebird";
 import {logger} from "./utils/logger";
+import {WashOrderRegistration} from "./routes/washOrderRegistration";
+import {WashOrderController} from "./controller/WashOrderController";
+import {mongoService} from "./types/services/mongoService";
 
-export const App = (() => {
+export const App = (mongoService: mongoService) => {
     const app: express.Application = express();
     let server: http.Server;
 
@@ -41,6 +44,14 @@ export const App = (() => {
         res.status(200).send({message: "Running"});
     });
 
+    const washOrdercontroller = WashOrderController(mongoService);
+
+
+    const washOrderRegist = WashOrderRegistration.getRouter(washOrdercontroller);
+    app.use(washOrderRegist);
+
+
+
     const shutdown = () => {
         server.close();
     };
@@ -62,4 +73,4 @@ export const App = (() => {
         shutdown,
         listen,
     }
-})();
+};
