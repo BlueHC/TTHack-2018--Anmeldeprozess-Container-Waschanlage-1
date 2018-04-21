@@ -9,7 +9,7 @@ const WashOderSchema = new Schema({
            {
                coveramount: {type: String},
                coverposition: {type: String},
-               surface: {type: String, default: "glatt"},
+               surface: {type: String},
                walltype: {type: String},
                lastcontent: {type: Array},
            }
