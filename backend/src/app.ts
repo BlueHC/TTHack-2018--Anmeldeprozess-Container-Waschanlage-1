@@ -54,10 +54,6 @@ export const App = (mongoService: mongoService) => {
         res.status(200).send({message: "Running"});
     });
 
-    app.get("/malte", (req: express.Request, res: express.Response) => {
-        res.status(200).send(JSON.stringify({"coord":{"lon":10,"lat":53.55},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01d"}],"base":"stations","main":{"temp":18.03,"pressure":1021,"humidity":45,"temp_min":17,"temp_max":19},"visibility":10000,"wind":{"speed":5.7,"deg":290},"clouds":{"all":0},"dt":1524316800,"sys":{"type":1,"id":4883,"message":0.0053,"country":"DE","sunrise":1524283537,"sunset":1524335567},"id":2911298,"name":"Hamburg","cod":200}));
-    });
-
     app.use(loginrouting);
     app.use(washOrderRegist);
 

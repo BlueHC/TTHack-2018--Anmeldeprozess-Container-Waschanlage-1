@@ -1,8 +1,14 @@
 # To get the backend up and running
-* Start a mongoDB instance on Port 27017 (for example via Docker)
+* Start a mongoDB instance on Port 27017 (for example via Docker) or simply use docker-compose up in the root of the project
 * `cd backend`
 * `npm install` (only first start)
 * `npm start`
+
+# Environemnt Setup
+* PORT - The Port the server will be running on
+* LOG_LEVEL - What log level you want to see from the  server
+* MONGO_CONNECTION_STRING - The string that specifies the mongodb
+* WEATHER_KEY - The API Key for OpenWeatherMap to query weather data for the wash orders
 
 # Team
 <a href=mailto:samuel.k.marfo@gmail.com>Samuel Marfo</a><br>
