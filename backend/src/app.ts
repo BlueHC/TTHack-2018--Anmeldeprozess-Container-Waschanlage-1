@@ -22,6 +22,15 @@ export const App = (mongoService: mongoService) => {
     const washOrderRegist = WashOrderRegistration.getRouter(washOrdercontroller);
 
     app.use((req: express.Request, res: express.Response, next: Function) => {
+        logger.info("New Request registered", {
+            url: req.url,
+            method: req.method,
+        });
+        res.removeHeader("X-Powered-By");
+        next();
+    });
+
+    app.use((req: express.Request, res: express.Response, next: Function) => {
         req.headers["content-type"] = "application/json";
         next();
     });
@@ -40,15 +49,6 @@ export const App = (mongoService: mongoService) => {
         } else {
             next();
         }
-    });
-
-    app.use((req: express.Request, res: express.Response, next: Function) => {
-        logger.info("New Request registered", {
-            url: req.url,
-            method: req.method,
-        });
-        res.removeHeader("X-Powered-By");
-        next();
     });
 
     app.get("/status", (req: express.Request, res: express.Response) => {
