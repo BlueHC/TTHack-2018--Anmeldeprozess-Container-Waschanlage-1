@@ -36,17 +36,22 @@ export const LoginController = (mongoService: mongoService): loginController => 
     };
 
     const register = (req: Request, res: Response) => {
-        if (!(req.body.name && req.body.surname && req.body.email && req.body.password)) {
+        if (!(req.body.account && req.body.name && req.body.surname && req.body.email && req.body.password)) {
             logger.warn("Registration without all information", {body: req.body});
             res.status(400).send({message: "You have not provided all information that is required for signing up"});
             return;
         }
         bcrypt.hashAsync(req.body.password, 10).then((password: string) => {
-            return mongoService.registerUser(req.body.surname, req.body.name, req.body.email, password);
+            return mongoService.registerUser(req.body.account, req.body.surname, req.body.name, req.body.email, password);
         }).then(() => {
             logger.info("User was registered and saved");
             res.status(200).send({message: "Success"});
         }).catch((err: Error) => {
+            if (err.message.includes("E11000")) {
+                logger.info("Duplicate entry", {email: req.body.email});
+                res.status(409).send({message: "Email already in use"});
+                return;
+            }
             logger.error("There was an error saving the user", {error: err});
             res.status(500).send({message: "Internal Server Error"});
         });
