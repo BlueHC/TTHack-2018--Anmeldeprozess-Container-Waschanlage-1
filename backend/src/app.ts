@@ -5,9 +5,12 @@ import * as http from "http";
 import {PORT} from "./config/config";
 import * as Bluebird from "bluebird";
 import {logger} from "./utils/logger";
+import {WashOrderRegistration} from "./routes/washOrderRegistration";
+import {WashOrderController} from "./controller/WashOrderController";
+import {mongoService} from "./types/services/mongoService";
 
-export const App = (() => {
-    const app = express();
+export const App = (mongoService: mongoService) => {
+    const app: express.Application = express();
     let server: http.Server;
 
     app.use((req: express.Request, res: express.Response, next: Function) => {
@@ -41,12 +44,20 @@ export const App = (() => {
         res.status(200).send({message: "Running"});
     });
 
+    const washOrdercontroller = WashOrderController(mongoService);
+
+
+    const washOrderRegist = WashOrderRegistration.getRouter(washOrdercontroller);
+    app.use(washOrderRegist);
+
+
+
     const shutdown = () => {
         server.close();
     };
 
     const listen = (): Bluebird<any> => {
-        return new Bluebird<any>((resolve, reject) => {
+        return new Bluebird<any>((resolve: Function, reject: Function) => {
             server = app.listen(PORT, (err: Error) => {
                 if (err) {
                     reject(err);
@@ -62,4 +73,4 @@ export const App = (() => {
         shutdown,
         listen,
     }
-})();
+};
