@@ -1,0 +1,134 @@
+{% extends "baseHTML.twig" %}
+
+{% block body %}
+    <div>
+        <form action="generateCleaningForm.php" method="post" id="selectTrailertype" name="selectTrailertype" class="form-control mt-3">
+            Trailertype
+            <div class="form-group">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="Ttype" value="20" id="Ttype20">
+                    <label class="form-check-lable" for="Ttype20"><img src="lib/img/20.png"><em>20</em></label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="Ttype" value="20+20" id="Ttype20+20">
+                    <label class="form-check-lable" for="Ttype20+20"><img src="lib/img/20+20.png"><em>20 + 20</em></label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="Ttype" value="40" id="Ttype40">
+                    <label class="form-check-lable" for="Ttype40"><img src="lib/img/40.png"><em>40</em></label>
+                </div>
+            </div>
+
+            Chambers
+            <div class="form-group">
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="amountChamber" id="Chamber1" value="1">
+                <label class="form-check-label" for="Chamber1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="amountChamber" id="Chamber2" value="2">
+                <label class="form-check-label" for="Chamber2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="amountChamber" id="Chamber3" value="3">
+                <label class="form-check-label" for="Chamber3">3</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="amountChamber" id="Chamber4" value="4">
+                <label class="form-check-label" id="LabelChamber4" for="Chamber4">4</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="amountChamber" id="Chamber5" value="5">
+                <label class="form-check-label" id="LabelChamber5" for="Chamber5">5</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="amountChamber" id="Chamber6" value="6">
+                <label class="form-check-label" id="LabelChamber6" for="Chamber6">6</label>
+            </div>
+            </div>
+            <div class="form-group">
+                <label class="form-check-label" id="LabelNumberPlate" for="NumberPlate">Numberplate</label>
+                <input class="form-control" type="text" name="NumberPlate" id="NumberPlate" placeholder="Numberplate">
+            </div>
+            <div class="form-group">
+                <label class="form-check-label" id="LabelTanknumber" for="Tanknumber">Tanknumber</label>
+                <input class="form-control" type="text" name="Tanknumber" id="Tanknumber" placeholder="XXXU1234567">
+            </div>
+    </div>
+            {% endblock %}
+
+
+{% block footer %}
+        <div class="navbar col-md-12 mx-auto sticky-bottom navbar-light bg-light">
+            <div class="col-6">
+                <a href="logout.php" class="btn btn-success btn-lg btn-block">back</a>
+            </div>
+            <div class="col-6">
+                <input  type="submit" class="btn btn-success btn-lg btn-block" value="next">
+            </div>
+        </div>
+        </form>
+    </div>
+{% endblock %}
+
+{% block script %}
+    <script>
+        $('#selectTrailertype input').on('change', function() {
+            console.log(this.value);
+            switch(this.value){
+
+                case "20":
+                    $("#Chamber6").hide();
+                    $("#LabelChamber6").hide();
+                    $("#Chamber5").hide();
+                    $("#LabelChamber5").hide();
+                    $("#Chamber4").hide();
+                    $("#LabelChamber4").hide();
+                    $("#Chamber3").show();
+                    $("#Chamber2").show();
+                    $("#Chamber1").show();
+                    $("#NumberPlate").show();
+                    $("#LabelNumberPlate").show();
+                    $("#Tanknumber").hide();
+                    $("#LabelTanknumber").hide();
+                    break;
+
+                case "20+20":
+                    $("#Chamber6").show();
+                    $("#LabelChamber6").show();
+                    $("#Chamber5").show();
+                    $("#LabelChamber5").show();
+                    $("#Chamber4").show();
+                    $("#LabelChamber4").show();
+                    $("#Chamber3").show();
+                    $("#Chamber2").show();
+                    $("#Chamber1").show();
+                    $("#NumberPlate").hide();
+                    $("#LabelNumberPlate").hide();
+                    $("#Tanknumber").show();
+                    $("#LabelTanknumber").show();
+                    break;
+
+                case "40":
+                    $("#Chamber6").hide();
+                    $("#LabelChamber6").hide();
+                    $("#Chamber5").show();
+                    $("#LabelChamber5").show();
+                    $("#Chamber4").show();
+                    $("#LabelChamber4").show();
+                    $("#Chamber3").show();
+                    $("#Chamber2").show();
+                    $("#Chamber1").show();
+                    $("#NumberPlate").show();
+                    $("#LabelNumberPlate").show();
+                    $("#Tanknumber").hide();
+                    $("#LabelTanknumber").hide();
+                    break;
+            }
+        })
+    </script>
+{% endblock %}
