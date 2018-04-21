@@ -27,12 +27,14 @@
   },
   "homepage": "https://github.com/BlueHC/TTHack-2018--Waschorder-Container-Waschanlage-1#readme",
   "dependencies": {
+    "@types/nodemailer": "^4.6.0",
     "axios": "^0.18.0",
     "bluebird": "^3.5.1",
     "body-parser": "^1.18.2",
     "cors": "^2.8.4",
     "express": "^4.16.3",
     "mongoose": "^5.0.15",
+    "nodemailer": "^4.6.4",
     "nodemon": "^1.17.3",
     "typescript": "^2.8.3",
     "winston": "^2.4.2"

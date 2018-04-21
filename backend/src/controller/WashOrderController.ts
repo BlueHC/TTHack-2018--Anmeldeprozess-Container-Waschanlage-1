@@ -15,7 +15,7 @@ export const WashOrderController = (mongoService: mongoService): washOrderContro
         }).catch((err: Error) => {
             logger.error("There was an error writing a wash order", {error: err});
             res.status(500).send({message: "Internal Server Error"});
-        })
+        });
     };
 
     return {
