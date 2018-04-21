@@ -1,7 +1,7 @@
 .btn-success{
     background-color: #002369 !important;
     border-color: #be0038 !important;
-    color: #ffffff;
+    color: #ffffff !important;
 }
 
 .btn-success:hover{
