@@ -47,6 +47,7 @@ export const App = (mongoService: mongoService) => {
             url: req.url,
             method: req.method,
         });
+        res.removeHeader("X-Powered-By");
         next();
     });
 
