@@ -5,7 +5,7 @@ import {washOrderController} from "../types/controller/washOrderController";
 
 export const WashOrderController = (mongoService: mongoService): washOrderController => {
     const saveWashOrder = (req: Request, res: Response): void => {
-        if (!req.body) {
+        if (!req.body.name) {
             res.status(400).send({message: "You did not provide a body"});
             return;
         }
