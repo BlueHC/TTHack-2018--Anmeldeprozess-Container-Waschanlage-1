@@ -29,6 +29,7 @@ img:hover{
 .btn-success:active {
     box-shadow: none;
     background-color: #002369 !important;
+    text-decoration: none;
 }
 
 .sticky-bottom {
