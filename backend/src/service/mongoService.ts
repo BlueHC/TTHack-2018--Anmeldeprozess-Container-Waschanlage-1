@@ -31,6 +31,14 @@ export const MongoService = (() => {
         });
     };
 
-    return {init}
+    const close = (): any => {
+        logger.info("Closing database connection");
+        return mongoose.connection.close();
+    };
+
+    return {
+        init,
+        close,
+    }
 
 })();
