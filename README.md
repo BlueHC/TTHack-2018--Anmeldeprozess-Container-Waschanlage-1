@@ -1,12 +1,13 @@
 # To get the backend up and running
+* Start a mongoDB instance on Port 27017 (for example via Docker)
 * `cd backend`
 * `npm install` (only first start)
 * `npm start`
 
 # Team
-* Samuel Marfo - samuel.k.marfo@gmail.com
-* Lisa Müller - 5lmuelle@informatik.uni-hamburg.de
-* Timo Mantei - 5mantei@informatik.uni-hamburg.de
-* Ariana Sliwa - 5sliwa@informatik.uni-hamburg.de
-* Malte Husung - 5husung@informatik.uni-hamburg.de
-* Timbo Blaesche - 5blaesch@informatik.uni-hamburg.de
+<a href=mailto:samuel.k.marfo@gmail.com>Samuel Marfo</a><br>
+<a href=mailto:5lmuelle@informatik.uni-hamburg.de>Lisa Müller</a><br>
+<a href=mailto:5mantei@informatik.uni-hamburg.de>Timo Mantei</a><br>
+<a href=mailto:5sliwa@informatik.uni-hamburg.de>Ariana Sliwa</a><br>
+<a href=mailto:5husung@informatik.uni-hamburg.de>Malte Husung</a><br>
+<a href=mailto:5blaesch@informatik.uni-hamburg.de>Timbo Blaesche</a><br>
