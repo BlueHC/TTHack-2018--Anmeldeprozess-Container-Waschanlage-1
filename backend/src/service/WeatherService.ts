@@ -4,7 +4,7 @@ import {WEATHER_KEY} from "../config/config";
 import axios from "axios";
 import {logger} from "../utils/logger";
 
-const WeatherService = (() => {
+export const WeatherService = (() => {
 
     const ret: any = {};
     
