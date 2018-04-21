@@ -4,6 +4,18 @@
     color: #ffffff !important;
 }
 
+.btn-select{
+    background-color: #002369 !important;
+    border-color: #002369 !important;
+    color: #ffffff !important;
+    border-radius: 0!important;
+}
+
+img:hover{
+    filter: none !important;
+
+}
+
 .btn-success:hover{
     background-color: #002369 !important;
     border-color: #002369 !important;
@@ -31,6 +43,11 @@
 
 .form-check-input{
     visibility: hidden;
+
+}
+
+.form-check-input:active{
+    visibility: visible;
 
 }
 
