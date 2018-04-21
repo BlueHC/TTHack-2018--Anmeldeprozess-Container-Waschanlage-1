@@ -15,6 +15,11 @@ export const LoginController = (mongoService: mongoService): loginController => 
             res.status(403).send({message: "You are not authorized!"});
         }
         mongoService.getUser(req.body.email).then((user: User) => {
+            if (!user) {
+                logger.warn("User trying to login with incorrect credentials", {email: req.body.email});
+                res.status(404).send({message: "The credentials you are using are invalid"});
+                return;
+            }
             bcrypt.compareAsync(req.body.password, user.password).then((result: boolean) => {
                 if (result) {
                     logger.info("User was logged in", {user: req.body.email});
