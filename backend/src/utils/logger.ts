@@ -6,7 +6,7 @@ export const logger = (() => {
         level: LOG_LEVEL,
         transports: [
             new winston.transports.Console({colorize: true, timestamp: true}),
-            new winston.transports.File({filename: "events.log"}),
+            new winston.transports.File({filename: "events.log", colorize: true, timestamp: true}),
         ],
         exitOnError: false
     })
