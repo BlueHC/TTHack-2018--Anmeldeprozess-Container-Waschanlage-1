@@ -18,7 +18,9 @@ function Formhandler($Type, $Identifyer, $Chambers){
                 "trailerIdentifyer" => $Identifyer,
                 "transCoveramount" => "transCoveramount",
                 "transWalltype" => "transWalltype",
-                "transSurface" => "transSurface"
+                "transSurface" => "transSurface",
+                "transWalltype" => "Surface",
+                "transLastDischarge" => "Last Discharge"
             ]
         );
         exit();
