@@ -4,6 +4,12 @@
 * `npm install` (only first start)
 * `npm start`
 
+# Environemnt Setup
+* PORT - The Port the server will be running on
+* LOG_LEVEL - What log level you want to see from the  server
+* MONGO_CONNECTION_STRING - The string that specifies the mongodb
+* WEATHER_KEY - The API Key for OpenWeatherMap to query weather data for the wash orders
+
 # Team
 <a href=mailto:samuel.k.marfo@gmail.com>Samuel Marfo</a><br>
 <a href=mailto:5lmuelle@informatik.uni-hamburg.de>Lisa Müller</a><br>
