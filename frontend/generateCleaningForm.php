@@ -34,7 +34,7 @@ function Formhandler($Type, $Identifyer, $Chambers){
 if(isset($_GET["create"]))
 {
     if(isset($_POST["Numberplate"])){
-    $Identifyer = ($_POST["Numberplate"]);
+    $PostIdentifyer = ($_POST["Numberplate"]);
 }else {
     $PostIdentifyer = ($_POST["Tanknumber"]);
 }

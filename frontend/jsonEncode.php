@@ -5,6 +5,6 @@ echo $_SESSION["TrailerChambers"], $_SESSION["TrailerIdentifyer"], $_SESSION["Tr
 
 print_r(json_encode($_POST));
 
-
-
+session_abort();
 session_destroy();
+
