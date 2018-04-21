@@ -15,9 +15,13 @@ function Formhandler($Type, $Identifyer, $Chambers){
             [
                 "typeImage" => $Type,
                 "amountChambermodals" => $Chambers,
-                "trailerIdentifyer" => $Identifyer
+                "trailerIdentifyer" => $Identifyer,
+                "transCoveramount" => "transCoveramount",
+                "transWalltype" => "transWalltype",
+                "transSurface" => "transSurface"
             ]
         );
+        exit();
 
 
 
