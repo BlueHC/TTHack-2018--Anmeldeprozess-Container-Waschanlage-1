@@ -1,10 +1,12 @@
 <?php
 session_start();
 
-
 //Formhandler
 function Formhandler($Type, $Identifyer, $Chambers){
-    if($Type = "20" and $Chambers <= 3 or $Type = "20+20" and $Chambers <= 6 or $Type = "40" and $Chambers <= 5){
+
+        $_SESSION["TrailerType"] = $Type;
+        $_SESSION["TrailerChambers"] = $Chambers;
+        $_SESSION["TrailerIdentifyer"] = $Identifyer;
 
         require_once("vendor/autoload.php");
 
@@ -27,17 +29,16 @@ function Formhandler($Type, $Identifyer, $Chambers){
 
 
 
-    }
 }
 
 if(isset($_GET["create"]))
 {
     if(isset($_POST["Numberplate"])){
-    $Identifyer = $_POST["Numberplate"];
+    $PostIdentifyer = ($_POST["Numberplate"]);
 }else {
-    $PostIdentifyer = $_POST["Tanknumber"];
+    $PostIdentifyer = ($_POST["Tanknumber"]);
 }
 
-Formhandler($_POST["Ttype"], $PostIdentifyer, $_POST["amountChamber"]);
+Formhandler(($_POST["Ttype"]), $PostIdentifyer, ($_POST["amountChamber"]));
 }
 

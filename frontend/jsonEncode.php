@@ -1,8 +1,10 @@
 <?php
+session_start();
 
- $toEncode[] = $_POST[""];
+echo $_SESSION["TrailerChambers"], $_SESSION["TrailerIdentifyer"], $_SESSION["TrailerType"];
 
-    $entrys = json_encode($_POST);
+print_r(json_encode($_POST));
 
-    echo $entrys ;
-}
+session_abort();
+session_destroy();
+
