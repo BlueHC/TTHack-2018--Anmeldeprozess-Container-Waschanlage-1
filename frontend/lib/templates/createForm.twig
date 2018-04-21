@@ -1,11 +1,62 @@
 {% extends "baseHTML.twig" %}
 
 {% block body %}
+
     <div class="container">
-        <div class="row mx-auto">
+        <div class="row mt-3">
             {% for i in range(1, amountChambermodals) %}
-                <a class="btn btn-success">{{ i }}</a>
+                <a class="btn btn-md btn-select mr-1" data-toggle="modal" data-target="#Modal{{ i }}">{{ i }}</a>
+
+                <form class="modal multi-step" id="Modal{{ i }}">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title step-1" data-step="1">{{ transSpecifications }}</h4>
+                                <h4 class="modal-title step-2" data-step="2">{{ transSpecifications }}</h4>
+                            </div>
+                            <div class="modal-body step step-1">
+                                <form class="form-control">
+                                    <div class="form-group">
+                                        <label>{{ transCoveramount }}</label>
+                                        <div class="col-6">
+                                            <input class="form-check-input" type="radio" name="amountConver" id="cover1" value="1">
+                                        </div>
+                                        <div class="col-6">
+                                            <input class="form-check-input" type="radio" name="amountConver" id="cover1" value="2">
+                                        </div>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label>{{ transWalltype }}</label>
+                                        <div class="col-6">
+                                            <input class="form-check-input" type="radio" name="walltype" id="walltype1" value="even">
+                                        </div>
+                                        <div class="col-6">
+                                            <input class="form-check-input" type="radio" name="walltype" id="walltype2" value="curved">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>{{ transSurface }}</label>
+                                        <div class="col-6">
+                                            <input class="form-check-input" type="radio" name="surface" id="surface1" value="rough">
+                                        </div>
+                                        <div class="col-6">
+                                            <input class="form-check-input" type="radio" name="surface" id="surface2" value="smooth">
+                                        </div>
+                                    </div>
+                            </div>
+                            <div class="modal-body step step-2">
+                                This is the final step
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary step step-1" data-step="1" onclick="sendEvent('#Modal{{ i }}', 2)">Continue</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
             {% endfor %}
+            <img width="28px" src="lib/img/truck_front.svg">
         </div>
     </div>
 {% endblock %}
@@ -15,59 +66,11 @@
 {% endblock %}
 
 {% block script %}
+    <script src="lib/js/multi-step-modal.js"></script>
     <script>
-        $('#selectTrailertype input').on('change', function() {
-            console.log(this.value);
-            switch(this.value){
-
-                case "20":
-                    $("#Chamber6").hide();
-                    $("#LabelChamber6").hide();
-                    $("#Chamber5").hide();
-                    $("#LabelChamber5").hide();
-                    $("#Chamber4").hide();
-                    $("#LabelChamber4").hide();
-                    $("#Chamber3").show();
-                    $("#Chamber2").show();
-                    $("#Chamber1").show();
-                    $("#NumberPlate").show();
-                    $("#LabelNumberPlate").show();
-                    $("#Tanknumber").hide();
-                    $("#LabelTanknumber").hide();
-                    break;
-
-                case "20+20":
-                    $("#Chamber6").show();
-                    $("#LabelChamber6").show();
-                    $("#Chamber5").show();
-                    $("#LabelChamber5").show();
-                    $("#Chamber4").show();
-                    $("#LabelChamber4").show();
-                    $("#Chamber3").show();
-                    $("#Chamber2").show();
-                    $("#Chamber1").show();
-                    $("#NumberPlate").hide();
-                    $("#LabelNumberPlate").hide();
-                    $("#Tanknumber").show();
-                    $("#LabelTanknumber").show();
-                    break;
-
-                case "40":
-                    $("#Chamber6").hide();
-                    $("#LabelChamber6").hide();
-                    $("#Chamber5").show();
-                    $("#LabelChamber5").show();
-                    $("#Chamber4").show();
-                    $("#LabelChamber4").show();
-                    $("#Chamber3").show();
-                    $("#Chamber2").show();
-                    $("#Chamber1").show();
-                    $("#NumberPlate").show();
-                    $("#LabelNumberPlate").show();
-                    $("#Tanknumber").hide();
-                    $("#LabelTanknumber").hide();
-                    break;
-            }
-        })
+        sendEvent = function(sel, step) {
+            $(sel).trigger('next.m.' + step);
+        }
     </script>
 {% endblock %}
+

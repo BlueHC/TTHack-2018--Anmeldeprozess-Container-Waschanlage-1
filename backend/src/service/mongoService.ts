@@ -4,6 +4,7 @@ import {logger} from "../utils/logger";
 import {mongoService} from "../types/services/mongoService";
 import {WashOderModel} from "../models/WashOrderModel";
 import {washOrder} from "../types/models/WashOrder";
+import {UserModel} from "../models/User";
 
 export const MongoService = (() => {
 
@@ -13,8 +14,13 @@ export const MongoService = (() => {
         return new WashOderModel(washOrder).save();
     };
 
+    const getUser = (email: string): any => {
+        return UserModel.findOne({email: email}).exec();
+    };
+
     const mongoService: mongoService = {
         saveWashOrder,
+        getUser,
     };
 
     const init = () => {
@@ -25,6 +31,14 @@ export const MongoService = (() => {
         });
     };
 
-    return {init}
+    const close = (): any => {
+        logger.info("Closing database connection");
+        return mongoose.connection.close();
+    };
+
+    return {
+        init,
+        close,
+    }
 
 })();
