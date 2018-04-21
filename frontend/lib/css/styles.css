@@ -34,6 +34,11 @@
 
 }
 
+.form-check-input:active{
+    visibility: visible;
+
+}
+
 img:hover{
     filter: invert(20%);
 }

@@ -2,10 +2,9 @@
 
 {% block body %}
 <div class="text-center">
- <form action="generateCleaningForm.php?create" method="post" id="selectTrailertype" name="selectTrailertype" class="form-control mt-3">
+ <form action="generateCleaningForm.php?create" method="post" id="selectTrailertype" name="selectTrailertype" class="form mt-3">
      <div id="section1">
             Trailertype
-            <div>
             <div class="form-group mt-5">
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="Ttype" value="20" id="Ttype20">
@@ -14,8 +13,8 @@
             </div>
             <div class="form-group mt-5">
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="Ttype" value="20+20" id="Ttype20+20">
-                    <label class="form-check-lable" for="Ttype20+20"><img src="lib/img/truck_20_20.svg" width="175px"></label>
+                    <input class="form-check-input" type="radio" name="Ttype" value="20+20" id="Ttype20b">
+                    <label class="form-check-lable" for="Ttype20b"><img src="lib/img/truck_20_20.svg" width="175px"></label>
                 </div>
             </div>
             <div class="form-group mt-5 mb-5">
@@ -25,35 +24,34 @@
                     <img src="lib/img/truck_40.svg" width="175px"></label>
                 </div>
             </div>
-            </div>
         </div>
-     <div id="section2" style="display: none">
+     <div id="section2" class="mx-auto text-center" style="display: none">
      <div class="form-group">
          Chambers
-         <div class="form-group">
-             <div class="form-check form-check-inline">
+         <div class="btn-group" role="group" aria-label="Basic example">
+             <div class="form-check">
                  <input class="form-check-input" type="radio" name="amountChamber" id="Chamber1" value="1">
-                 <label class="form-check-label" for="Chamber1">1</label>
+                 <label class="btn btn-success" for="Chamber1">1</label>
              </div>
-             <div class="form-check form-check-inline">
+             <div class="form-check">
                  <input class="form-check-input" type="radio" name="amountChamber" id="Chamber2" value="2">
-                 <label class="form-check-label" for="Chamber2">2</label>
+                 <label class="btn btn-success" for="Chamber2">2</label>
              </div>
-             <div class="form-check form-check-inline">
+             <div class="form-check">
                  <input class="form-check-input" type="radio" name="amountChamber" id="Chamber3" value="3">
-                 <label class="form-check-label" for="Chamber3">3</label>
+                 <label class="btn btn-success" for="Chamber3">3</label>
              </div>
-             <div class="form-check form-check-inline">
+             <div class="form-check">
                  <input class="form-check-input" type="radio" name="amountChamber" id="Chamber4" value="4">
-                 <label class="form-check-label" id="LabelChamber4" for="Chamber4">4</label>
+                 <label class="btn btn-success" id="LabelChamber4" for="Chamber4">4</label>
              </div>
-             <div class="form-check form-check-inline">
+             <div class="form-check">
                  <input class="form-check-input" type="radio" name="amountChamber" id="Chamber5" value="5">
-                 <label class="form-check-label" id="LabelChamber5" for="Chamber5">5</label>
+                 <label class="btn btn-success" id="LabelChamber5" for="Chamber5">5</label>
              </div>
-             <div class="form-check form-check-inline">
+             <div class="form-check">
                  <input class="form-check-input" type="radio" name="amountChamber" id="Chamber6" value="6">
-                 <label class="form-check-label" id="LabelChamber6" for="Chamber6">6</label>
+                 <label class="btn btn-success" id="LabelChamber6" for="Chamber6">6</label>
              </div>
          </div>
          <div class="form-group">
@@ -64,22 +62,25 @@
              <label class="form-check-label" id="LabelTanknumber" for="Tanknumber">Tanknumber</label>
              <input class="form-control" type="text" name="Tanknumber" id="Tanknumber" placeholder="XXXU1234567">
          </div>
-     </div>
+
      {% endblock %}
 
 
 {% block footer %}
-        <div class="navbar col-md-12 mx-auto sticky-bottom navbar-light bg-light">
-            <div class="col-6">
-                <a href="logout.php" class="btn btn-success btn-lg btn-block">back</a>
+            <div class="navbar col-md-12 mx-auto sticky-bottom navbar-light bg-light">
+                <div class="col-6">
+                    <a id="back" class="btn btn-success btn-lg btn-block">back</a>
+                </div>
+                <div class="col-6">
+                    <input  type="submit" class="btn btn-success btn-lg btn-block" value="next">
+                </div>
             </div>
-            <div class="col-6">
-                <input  type="submit" class="btn btn-success btn-lg btn-block" value="next">
-            </div>
-        </div>
+         </div>
      </div>
  </form>
- </div>
+</div>
+
+
 
 {% endblock %}
 
@@ -88,6 +89,21 @@
         $('#Ttype20').click(function(){
             $("#section1").hide();
             $("#section2").show();
+        });
+
+        $('#Ttype20b').click(function(){
+            $("#section1").hide();
+            $("#section2").show();
+        });
+
+        $('#Ttype40').click(function(){
+            $("#section1").hide();
+            $("#section2").show();
+        });
+
+        $('#back').click(function(){
+            $("#section1").show();
+            $("#section2").hide();
         });
 
         $('#selectTrailertype input').on('change', function() {
@@ -105,8 +121,10 @@
                     $("#Chamber2").show();
                     $("#Chamber1").show();
                     $("#NumberPlate").show();
+                    $("#NumberPlate").prop('required',true);
                     $("#LabelNumberPlate").show();
                     $("#Tanknumber").hide();
+                    $("#Tanknumber").prop('required',false);
                     $("#LabelTanknumber").hide();
                     break;
 
@@ -121,8 +139,10 @@
                     $("#Chamber2").show();
                     $("#Chamber1").show();
                     $("#NumberPlate").hide();
+                    $("#NumberPlate").prop('required',false);
                     $("#LabelNumberPlate").hide();
                     $("#Tanknumber").show();
+                    $("#Tanknumber").prop('required',true);
                     $("#LabelTanknumber").show();
                     break;
 
@@ -137,8 +157,10 @@
                     $("#Chamber2").show();
                     $("#Chamber1").show();
                     $("#NumberPlate").show();
+                    $("#NumberPlate").prop('required',true);
                     $("#LabelNumberPlate").show();
                     $("#Tanknumber").hide();
+                    $("#Tanknumber").prop('required',false);
                     $("#LabelTanknumber").hide();
                     break;
             }
