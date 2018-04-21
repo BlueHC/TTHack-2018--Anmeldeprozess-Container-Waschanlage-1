@@ -9,9 +9,5 @@ echo $twig->render('chooseTrailer.twig',
         'pageTitle' => 'HHLAcleaner',
         'pageHeading' => 'specify your trailer',
         'headingSize' => '2',
-        'transMail' => 'Email:',
-        'transPassword' => 'Password:',
-        'transGuest' => 'Continue without registration',
-        'transRequestLogin' => 'Forgot your ID?'
     ]
 );
