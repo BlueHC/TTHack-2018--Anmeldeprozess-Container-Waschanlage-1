@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$sessions = array($_SESSION["TrailerChambers"], $_SESSION["TrailerIdentifyer"], $_SESSION["TrailerType"], $_SESSION["supervise"]);
+$sessions = array($_SESSION["TrailerChambers"], $_SESSION["TrailerIdentifyer"], $_SESSION["TrailerType"], $_SESSION["supervise"], $_SESSION["guest"]);
 
 $toEncode = array_merge($_POST, $sessions);
 
