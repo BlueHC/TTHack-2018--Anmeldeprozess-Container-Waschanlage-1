@@ -1,34 +1,34 @@
+//TEST: "http://samples.openweathermap.org/data/2.5/forecast?id=524901&appid="
 
+import {WEATHER_KEY} from "../config/config";
+import axios from "axios";
+import {logger} from "../utils/logger";
 
-/*jslint devel: true */
-/*eslint no-console: off */
-/* bekomme: ort + anfangsdatum
-    gebe: array mit temp und Luftfeuchtigkeit durchschnitt */
-    
-//REAL: http://api.openweathermap.org/data/2.5/weather?q=" + place + ",de&units=metric&APPID=1fe6fc2a2ec41d3904a2584726c8ce56
+const WeatherService = (() => {
 
-//TEST: "http://samples.openweathermap.org/data/2.5/forecast?id=524901&appid=b1b15e88fa797225412429c1c50c122a1"
-
-var WeatherService = (function(){
-
-    var jason;
-    var result  = {};
-
-    var request = new XMLHttpRequest();
+    const ret: any = {};
     
     // returns .temp and .humidity for the given place (string)
-    var getWeatherData = function(place){
-        request.open("GET", "http://192.168.178.110:3001/malte", false);
-        request.send();
-        jason = JSON.parse(request.responseText);
-
-        result.temp = jason.main.temp;
-        result.humidity = jason.main.humidity;
-        
-        return result;
+    const getWeatherData = (place: string) => {
+        return axios.get("http://api.openweathermap.org/data/2.5/weather", {
+            params: {
+                q: place + ",de",
+                appid: WEATHER_KEY,
+                units: "metric",
+            }
+        }).then((result) => {
+            ret.temp = result.data.main.temp;
+            ret.humidity = result.data.main.humidity;
+            return ret;
+        }).catch((err: Error) => {
+            logger.error("There was an error when getting weather data", {error: err});
+            return;
+        });
     };
 
-return {
-    getWeatherData: getWeatherData
-};
+    // result.temp = jason.main.temp;
+    // result.humidity = jason.main.humidity;
+
+return {getWeatherData};
+
 })();
