@@ -1,0 +1,29 @@
+.btn-success{
+    background-color: #002369 !important;
+    border-color: #be0038 !important;
+}
+
+.btn-success:hover{
+    background-color: #002369 !important;
+    border-color: #be0038 !important;
+    box-shadow: none;
+}
+
+.btn-success:focus {
+    box-shadow: none;
+}
+
+.btn-success:active {
+    box-shadow: none;
+    background-color: #BE0038 !important;
+}
+
+.sticky-bottom {
+    position: sticky;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    opacity: 0.9;
+    color: white;
+}

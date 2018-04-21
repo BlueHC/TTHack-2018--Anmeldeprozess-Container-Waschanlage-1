@@ -4,11 +4,11 @@ require_once("vendor/autoload.php");
 $loader = new \Twig_Loader_Filesystem(__DIR__.'/lib/templates');
 $twig = new \Twig_Environment($loader);
 
-echo $twig->render('baseHTML.twig',
+echo $twig->render('chooseTrailer.twig',
     [
         'pageTitle' => 'HHLAcleaner',
-        'pageHeading' => 'Login',
-        'headingSize' => '1',
+        'pageHeading' => 'specify your trailer',
+        'headingSize' => '2',
         'transMail' => 'Email:',
         'transPassword' => 'Password:',
         'transGuest' => 'Continue without registration',
