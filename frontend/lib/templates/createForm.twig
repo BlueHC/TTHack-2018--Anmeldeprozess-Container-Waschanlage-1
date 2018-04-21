@@ -6,17 +6,14 @@
         <div class="row mx-auto">
             {% for i in range(amountChambermodals, 1) %}
                 <a class="btn btn-success" data-toggle="modal" data-target="#Modal{{ i }}">{{ i }}</a>
-
-                <div class="modal fade" id="Modal{{ i }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
+                <form class="modal multi-step" id="demo-modal-1">
+                    <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
+                                <h4 class="modal-title step-1" data-step="1">{{ transSpecifications }}</h4>
+                                <h4 class="modal-title step-2" data-step="2">{{ transSpecifications }}</h4>
                             </div>
-                            <div class="modal-body">
+                            <div class="modal-body step step-1">
                                 <form class="form-control">
                                     <div class="form-group">
                                         <label>{{ transCoveramount }}</label>
@@ -24,19 +21,44 @@
                                             <input class="form-check-input" type="radio" name="amountConver" id="cover1" value="1">
                                         </div>
                                         <div class="col-6">
-                                            <input class="form-check-input" type="radio" name="amountConver" id="cover1" value="1">
+                                            <input class="form-check-input" type="radio" name="amountConver" id="cover1" value="2">
                                         </div>
 
                                     </div>
+                                    <div class="form-group">
+                                        <label>{{ transWalltype }}</label>
+                                        <div class="col-6">
+                                            <input class="form-check-input" type="radio" name="walltype" id="walltype1" value="even">
+                                        </div>
+                                        <div class="col-6">
+                                            <input class="form-check-input" type="radio" name="walltype" id="walltype2" value="curved">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>{{ transSurface }}</label>
+                                        <div class="col-6">
+                                            <input class="form-check-input" type="radio" name="surface" id="surface1" value="rough">
+                                        </div>
+                                        <div class="col-6">
+                                            <input class="form-check-input" type="radio" name="surface" id="surface2" value="smooth">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="submit" class="form-control btn-success" value="next">
+                                    </div>
                                 </form>
+
+                            </div>
+                            <div class="modal-body step step-2">
+                                This is the final step
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary step step-1" data-step="1" onclick="sendEvent('#demo-modal-1', 2)">Continue</button>
                             </div>
                         </div>
                     </div>
-                </div>
+                </form>
             {% endfor %}
             <img src="/#">
         </div>
@@ -47,3 +69,9 @@
 
 {% endblock %}
 
+<script src="multi-step-modal.js"></script>
+<script>
+    sendEvent = function(sel, step) {
+        $(sel).trigger('next.m.' + step);
+    }
+</script>
