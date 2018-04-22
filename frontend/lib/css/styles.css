@@ -65,3 +65,7 @@ img:hover{
 label{
     font-size: large;
 }
+
+hr{
+    border-top: 1px solid rgba(199, 0, 58,1)!important;
+}

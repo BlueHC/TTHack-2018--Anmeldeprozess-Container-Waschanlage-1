@@ -19,5 +19,5 @@ curl_exec($ch);
 
 session_abort();
 
-header("Refresh:4; url= uploadImage.php");
+header("Refresh:4; url= submitData.php");
 

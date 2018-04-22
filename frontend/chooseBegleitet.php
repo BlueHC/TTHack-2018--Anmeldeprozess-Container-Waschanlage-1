@@ -5,7 +5,7 @@ require_once("vendor/autoload.php");
 $loader = new \Twig_Loader_Filesystem(__DIR__.'/lib/templates');
 $twig = new \Twig_Environment($loader);
 
-echo $twig->render('chooseBegleitet.twig',
+echo $twig->render('chooseSupervised.twig',
     [
         'pageTitle' => 'HHLAcleaner',
         'pageHeading' => 'Which service offer do you prefer?',
