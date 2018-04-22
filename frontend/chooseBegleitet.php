@@ -12,3 +12,7 @@ echo $twig->render('chooseBegleitet.twig',
         'headingSize' => '2',
     ]
 );
+
+if(isset($_GET["guest"])){
+    $_SESSION["guest"] = true;
+}
