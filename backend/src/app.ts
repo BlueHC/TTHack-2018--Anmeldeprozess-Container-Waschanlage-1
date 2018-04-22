@@ -35,12 +35,13 @@ export const App = (mongoService: mongoService) => {
         next();
     });
 
-    app.use(bodyParser.json());
-    app.use(bodyParser.urlencoded({extended: true}));
+    app.use(express.json());
+    app.use(express.urlencoded({extended: true}));
     app.use(cors());
 
     app.use((err: Error, req: express.Request, res: express.Response, next: Function) => {
         if (err) {
+            logger.error("Unprocessable entity", {error: err});
             res.status(422).send({
                 message: "You have provided a non JSON Object to the API." +
                 " This package will not be processed"
