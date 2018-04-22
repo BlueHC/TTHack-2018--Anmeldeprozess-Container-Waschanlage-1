@@ -8,10 +8,12 @@ echo $twig->render('baseHTML.twig',
     [
         'pageTitle' => 'HHLAcleaner',
         'pageHeading' => 'Login',
-        'headingSize' => '1',
+        'headingSize' => '3',
         'transMail' => 'Email:',
         'transPassword' => 'Password:',
         'transGuest' => 'Continue without registration',
-        'transRequestLogin' => 'Forgot your ID?'
+        'transRequestLogin' => 'Forgot your ID?',
+        'transWelcome' => 'Moin Moin!',
+        'transWelcome2' => 'Welcome to the application of HHLA where you can schedule the cleaning process of your tank container.'
     ]
 );

@@ -8,8 +8,8 @@ $twig = new \Twig_Environment($loader);
 echo $twig->render('chooseTrailer.twig',
     [
         'pageTitle' => 'HHLAcleaner',
-        'pageHeading' => 'specify your trailer',
-        'headingSize' => '2',
+        'pageHeading' => 'Please specify your trailer:',
+        'headingSize' => '2'
     ]
 );
 
