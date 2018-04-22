@@ -1,30 +1,22 @@
 <?php
 session_start();
 
-$sessions = array($_SESSION["TrailerChambers"], $_SESSION["TrailerIdentifyer"], $_SESSION["TrailerType"], $_SESSION["supervise"]);
+$sessions = array("Trailer.chambers" =>$_SESSION["TrailerChambers"], "Trailer.identifier" =>$_SESSION["TrailerIdentifier"], "Trailer.type" =>$_SESSION["TrailerType"], "Trailer.supervise" =>$_SESSION["supervise"], "name" => "test");
 
 $toEncode = array_merge($_POST, $sessions);
 
-$json = json_encode($toEncode);
+$data_string = json_encode($toEncode);
 
-echo $json;
-
-$url = 'http://192.168.178.110:3001/washorder';
-$data = array('name' =>'test', 'json' => $json);
-
-// use key 'http' even if you send the request to https://...
-$options = array(
-    'http' => array(
-        'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
-        'method'  => 'POST',
-        'content' => http_build_query($data)
-    )
+$ch = curl_init('192.168.178.110:3001/washorder');
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+        'Content-Type: application/json',
+        'Content-Length: ' . strlen($data_string))
 );
-$context  = stream_context_create($options);
-$result = file_get_contents($url, false, $context);
-if ($result === FALSE) { /* Handle error */ }
+curl_exec($ch);
 
-var_dump($result);
 
 
 session_abort();

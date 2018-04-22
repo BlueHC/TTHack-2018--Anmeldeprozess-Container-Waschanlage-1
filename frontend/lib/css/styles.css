@@ -48,8 +48,9 @@ img:hover{
 
 }
 
-.form-check-input:active{
-    visibility: visible;
+.form-check{
+    border-color: #ffffff;
+    text-decoration: none;
 
 }
 
