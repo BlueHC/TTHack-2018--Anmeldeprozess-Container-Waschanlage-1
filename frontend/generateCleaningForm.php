@@ -18,14 +18,13 @@ function Formhandler($Type, $Identifier, $Chambers){
                 "typeImage" => $Type,
                 "amountChambermodals" => $Chambers,
                 "trailerIdentifier" => $Identifier,
-                "transCoveramount" => "transCoveramount",
-                "transCoveramount" => "Coveramount",
+                "transCoveramount" => "Total number of lids",
                 "transWalltype" => "transWalltype",
                 "transSurface" => "transSurface",
                 "transWalltype" => "Surface",
                 "transLastDischarge" => "Last Discharge",
                 "transWalls" => "Type of Walls",
-                "pageHeadline" => "Total number of chambers: $chambers"
+                "pageHeading" => "Total number of chambers: ".$Chambers
             ]
         );
         exit();
