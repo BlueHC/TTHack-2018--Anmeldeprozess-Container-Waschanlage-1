@@ -44,8 +44,7 @@ img:hover{
 
 .form-check-input{
     color: white;
-
-
+    visibility: hidden;
 }
 
 .form-check{
@@ -60,4 +59,8 @@ img:hover{
 
 label:active{
     filter: drop-shadow(2px);
+}
+
+label{
+    font-size: large;
 }

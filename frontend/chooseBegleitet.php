@@ -8,8 +8,10 @@ $twig = new \Twig_Environment($loader);
 echo $twig->render('chooseBegleitet.twig',
     [
         'pageTitle' => 'HHLAcleaner',
-        'pageHeading' => 'Do you want to supervise the cleaning?',
+        'pageHeading' => 'Which service offer do you prefer?',
         'headingSize' => '2',
+        'transAnswer1' => 'Drive-through',
+        'transAnswer2' => 'Drop-off'
     ]
 );
 
