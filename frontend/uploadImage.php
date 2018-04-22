@@ -8,6 +8,6 @@ $twig = new \Twig_Environment($loader);
 
 echo $twig->render('uploadImage.twig',[
 'pageTitle' => 'HHLAcleaner',
-        'pageHeading' => 'Upload your waybill',
+        'pageHeading' => 'Last steps...',
         'headingSize' => '2'
     ]);

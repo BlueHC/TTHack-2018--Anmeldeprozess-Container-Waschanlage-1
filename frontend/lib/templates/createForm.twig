@@ -14,7 +14,7 @@
                                     Chamber {{ i }}</a>
                             </h4>
                         </div>
-                        <div id="collapse{{ i }}" class="panel-collapse collapse in">
+                        <div id="collapse{{ i }}" class="panel-collapse collapse{% if i  == "1" %}&nbsp;show{% endif %}">
                             <div class="panel-body">
                                 <label>{{ transCoveramount }}</label>
                                 <div aria-expanded="true" class="btn-group" role="group">
