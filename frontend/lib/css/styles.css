@@ -11,6 +11,10 @@
     border-radius: 0!important;
 }
 
+.btn-group{
+    text-align: center;
+}
+
 img:hover{
     filter: none !important;
 

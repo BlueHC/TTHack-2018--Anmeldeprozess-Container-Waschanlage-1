@@ -19,10 +19,12 @@ function Formhandler($Type, $Identifier, $Chambers){
                 "amountChambermodals" => $Chambers,
                 "trailerIdentifier" => $Identifier,
                 "transCoveramount" => "transCoveramount",
+                "transCoveramount" => "Coveramount",
                 "transWalltype" => "transWalltype",
                 "transSurface" => "transSurface",
                 "transWalltype" => "Surface",
-                "transLastDischarge" => "Last Discharge"
+                "transLastDischarge" => "Last Discharge",
+                "transWalls" => "Type of Walls"
             ]
         );
         exit();
