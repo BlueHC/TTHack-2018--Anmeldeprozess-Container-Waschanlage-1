@@ -2,11 +2,11 @@
 session_start();
 
 //Formhandler
-function Formhandler($Type, $Identifyer, $Chambers){
+function Formhandler($Type, $Identifier, $Chambers){
 
         $_SESSION["TrailerType"] = $Type;
         $_SESSION["TrailerChambers"] = $Chambers;
-        $_SESSION["TrailerIdentifyer"] = $Identifyer;
+        $_SESSION["TrailerIdentifier"] = $Identifier;
 
         require_once("vendor/autoload.php");
 
@@ -17,7 +17,7 @@ function Formhandler($Type, $Identifyer, $Chambers){
             [
                 "typeImage" => $Type,
                 "amountChambermodals" => $Chambers,
-                "trailerIdentifyer" => $Identifyer,
+                "trailerIdentifier" => $Identifier,
                 "transCoveramount" => "transCoveramount",
                 "transWalltype" => "transWalltype",
                 "transSurface" => "transSurface",
