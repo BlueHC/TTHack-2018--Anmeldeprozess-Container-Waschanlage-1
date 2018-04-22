@@ -17,7 +17,7 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 );
 curl_exec($ch);
 
-
-
 session_abort();
+
+header("Refresh:4; url= uploadImage.php");
 
