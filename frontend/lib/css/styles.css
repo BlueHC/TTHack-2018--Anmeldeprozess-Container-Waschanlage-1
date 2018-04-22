@@ -4,6 +4,12 @@
     color: #ffffff !important;
 }
 
+.btn-clicked{
+    background-color: #356920 !important;
+    border-color: #003a69 !important;
+    color: #ffffff !important;
+}
+
 .btn-select{
     background-color: #002369 !important;
     border-color: #002369 !important;
@@ -21,8 +27,8 @@ img:hover{
 }
 
 .btn-success:hover{
-    background-color: #002369 !important;
-    border-color: #002369 !important;
+    background-color: #003a69 !important;
+    border-color: #003a69 !important;
     box-shadow: none;
 }
 
@@ -32,7 +38,7 @@ img:hover{
 
 .btn-success:active {
     box-shadow: none;
-    background-color: #002369 !important;
+    background-color: #003a69 !important;
     text-decoration: none;
 }
 
