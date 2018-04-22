@@ -24,7 +24,8 @@ function Formhandler($Type, $Identifier, $Chambers){
                 "transSurface" => "transSurface",
                 "transWalltype" => "Surface",
                 "transLastDischarge" => "Last Discharge",
-                "transWalls" => "Type of Walls"
+                "transWalls" => "Type of Walls",
+                "pageHeadline" => "Total number of chambers: $chambers"
             ]
         );
         exit();
