@@ -1,22 +1,19 @@
 {% extends "baseHTML.twig" %}
 
 {% block body %}
-    <form action="dashboard.php">
-
+    <form action="dashboard.php" method="post">
         <label>Upload your waybill</label>
         <div class="form-group custom-file">
             <input type="file" class="custom-file-input" id="validatedCustomFile" required>
             <label class="custom-file-label" for="validatedCustomFile">Choose waybill</label>
             <div class="invalid-feedback mb-3">Invalid file</div>
         </div>
-
         <div class="form-group">
         <label class="mt-1">ETA</label>
-            <input placeholder="ETA - Day" class="form-control input-group" type="date" value="ETA - Day">
-            <input placeholder="ETA - Time" class="form-control input-group" type="time" value="ETA - Time">
+            <input placeholder="ETA - Day" class="form-control input-group" type="date" name="dateETA">
+            <input placeholder="ETA - Time" class="form-control input-group" type="time" name="timeETA">
         </div>
-        <input type="submit" class="float-right btn btn-block btn-select" value="submit">
-
+        <input type="submit" class="float-right btn btn-block btn-select" value="next">
     </form>
 {% endblock %}
 

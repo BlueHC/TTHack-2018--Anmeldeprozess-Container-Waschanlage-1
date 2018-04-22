@@ -14,5 +14,7 @@ echo $twig->render('chooseTrailer.twig',
 );
 
 if(isset($_GET["supervise"])){
-    $_SESSION["supervise"] = true;
+    $_SESSION["supervise"] = "true";
+} else {
+    $_SESSION["supervise"] = "false";
 }
