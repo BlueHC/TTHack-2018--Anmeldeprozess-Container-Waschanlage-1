@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once("vendor/autoload.php");
 
 $loader = new \Twig_Loader_Filesystem(__DIR__.'/lib/templates');
@@ -11,3 +12,7 @@ echo $twig->render('chooseBegleitet.twig',
         'headingSize' => '2',
     ]
 );
+
+if(isset($_GET["guest"])){
+    $_SESSION["guest"] = true;
+}
