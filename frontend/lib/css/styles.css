@@ -47,22 +47,13 @@ img:hover{
 }
 
 .form-check-input{
-    color: white;
-    visibility: hidden;
+    opacity: 0;
+    cursor: pointer;
 }
 
-.form-check{
-    border-color: #ffffff;
-    text-decoration: none;
-
-}
 
 img:hover{
     filter: invert(20%);
-}
-
-label:active{
-    filter: drop-shadow(2px);
 }
 
 label{

@@ -1,12 +1,11 @@
 {% extends "baseHTML.twig" %}
 
 {% block body %}
-    <form name="uploadformular" enctype="multipart/form-data" action="dateiupload.php" method="post">
-
-        Datei: <input type="file" name="uploaddatei" size="60" maxlength="255">
-
-        <input type="Submit" name="submit" value="Datei hochladen">
-
-    </form>
+    <div class="custom-file mt-3">
+        <input type="file" class="custom-file-input" id="validatedCustomFile" required>
+        <label class="custom-file-label" for="validatedCustomFile">Choose waybill</label>
+        <div class="invalid-feedback">Invalid file</div>
+    </div>
+    <input type="submit" class="float-right btn btn-block btn-select" value="submit">
 {% endblock %}
 

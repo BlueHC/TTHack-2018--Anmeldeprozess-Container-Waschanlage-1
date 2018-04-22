@@ -7,7 +7,7 @@ $toEncode = array_merge($_POST, $sessions);
 
 $data_string = json_encode($toEncode);
 
-$ch = curl_init('192.168.178.110:3001/washorder');
+$ch = curl_init('192.168.178.107:3001/washorder');
 curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
 curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
