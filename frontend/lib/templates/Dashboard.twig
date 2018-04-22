@@ -7,5 +7,14 @@
 {% endblock %}
 
 {% block body %}
-
+    <div class="card">
+        <div class="card-body">
+            <h5>Your Details :</h5>
+            <i class="material-icons">alarm</i> <em>{{ timeETA }}<br>
+            <i class="material-icons">date_range</i> {{ dateETA }}
+            <div class="mt-2"><h5>Location:</em></div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2371.7740928977782!2d9.925807707267385!3d53.526091330307544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b18f89fd611db1%3A0x3f10a56bd72951f3!2sAltenwerder+Damm%2C+21129+Hamburg!5e0!3m2!1sde!2sde!4v1524383741172" width="310" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+        <p sytle="font-size: 7px!important" class="mt-3">The HCCR cafeteria, one of the best within the port of Hamburg, is looking forward to serve you between 7:00 and 13:30.</p>
+        </div>
+    </div>
 {% endblock %}
